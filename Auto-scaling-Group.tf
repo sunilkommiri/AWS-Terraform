@@ -6,7 +6,7 @@ launch_template {
 id = aws_launch_template.first_template.id
 version ="$latest"
 }
-vpc_zone_identifier = "var.subnet_ids
+vpc_zone_identifier = var.subnet_ids
 min_size = var.min_size
 max_size = var.max_size
 desired_capacity =var.desired_capacity
