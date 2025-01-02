@@ -10,3 +10,14 @@ variable "max_size" {
 variable "desired_capacity" {
   default = 2 
 }
+variaable "submet_ids"{
+type = list
+default = ["subnetid"]
+}
+variable "security_group_id"{
+type = list 
+default = ["security_group_id"]
+}
+variable ami_id{
+default = image_id 
+}
