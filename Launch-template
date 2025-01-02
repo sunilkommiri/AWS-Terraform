@@ -14,7 +14,7 @@ tag_specifications {
 resource_type = "instance"
 
 tags{
-Nmae = "first_template"
+Name = "first_template"
 }
 }
 }
