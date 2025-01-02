@@ -6,9 +6,9 @@ image_id ="var.ami_id"
 name_prefix ="first_template-launch-template"
 instance_type = "t2.micro"
 network_interface {
-associate_with_public_ip_address = true
-subnetid = ""
-security_group = var.security_group_ids
+associate_public_ip_address = true
+subnet_id = var.subnet_id
+security_groups = var.security_group_ids
 }
 tag_specifications {
 resource_type = "instance"
