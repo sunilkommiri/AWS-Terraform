@@ -2,13 +2,13 @@ provider "aws" {
 region = var.reagion 
 }
 resource "aws_launch_template" "first_template" {
-image_id =""
+image_id ="var.ami_id"
 name_prefix ="first_template-launch-template"
 instance_type = "t2.micro"
 network_interface {
 associate_with_public_ip_address = true
 subnetid = ""
-security_group = [""]
+security_group = var.security_group_ids
 }
 tag_specifications {
 resource_type = "instance"
