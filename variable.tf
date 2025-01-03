@@ -8,16 +8,18 @@ variable "max_size" {
   default = 3
 }
 variable "desired_capacity" {
-  default = 2 
+  default = 2
 }
-variaable "subnet_ids"{
+variable "subnet_ids"{
 type = list
-default = ["subnetid"]
+default = ["subnet-07038bfa1a0f264c8"]
 }
 variable "security_group_ids"{
-type = list 
-default = ["security_group_id"]
+type = list
+default = ["sg-0f48c598aabda9992"]
 }
 variable "ami_id" {
-default = image_id 
+default = "i-0f6299bbe0d996a88"
+
 }
+
