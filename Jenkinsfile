@@ -2,9 +2,8 @@ pipeline {
     agent any // Run on any available Jenkins agent
 
     environment {
-        AWS_ACCESS_KEY_ID = credentials('aws-access-key-id') // Store your AWS access key ID as a Jenkins credential
-        AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key') // Store your AWS secret access key as a Jenkins credential
         BUCKET_NAME = 'jenkiss3' // Replace with your S3 bucket name
+        withcredentials(credentialsId:'github_key1')
     }
 
     stages {
