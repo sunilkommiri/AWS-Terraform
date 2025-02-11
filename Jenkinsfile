@@ -2,8 +2,9 @@ pipeline {
     agent any // Run on any available Jenkins agent
 
     environment {
-        BUCKET_NAME = 'jenkiss3' // Replace with your S3 bucket name
-        withcredentials(credentialsId:'github_key1')
+        withCredentials([credentialsId:'github_key1']) {
+            BUCKET_NAME = 'jenkiss3'
+        }
     }
 
     stages {
