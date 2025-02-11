@@ -16,12 +16,11 @@ pipeline {
 
         stage('Deploy to S3') {
             steps {
-                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'github_key1']]) {
-                script {
-                    // Use the AWS CLI to upload files to S3
-                    sh '''
-                        aws s3 cp . s3://$BUCKET_NAME --recursive --exclude "*.git*" --exclude ".git/*" --exclude ".github/*" --exclude ".gitignore"
-                    '''
+                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'github_key1']]) { // Correct syntax!
+                    script {
+                        sh '''
+                            aws s3 cp . s3://$BUCKET_NAME --recursive --exclude "*.git*" --exclude ".git/*" --exclude ".github/*" --exclude ".gitignore"
+                        '''
                 }
             }
         }
