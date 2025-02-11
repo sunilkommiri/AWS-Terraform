@@ -2,7 +2,7 @@ pipeline {
     agent any // Run on any available Jenkins agent
 
     environment {
-        withCredentials([credentialsId:'github_key1']) {
+        withCredentials([(credentialsId:'github_key1')]) {
             BUCKET_NAME = 'jenkiss3'
         }
     }
