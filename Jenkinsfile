@@ -16,6 +16,7 @@ pipeline {
 
         stage('Deploy to S3') {
             steps {
+                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'github_key1']]) {
                 script {
                     // Use the AWS CLI to upload files to S3
                     sh '''
@@ -24,6 +25,7 @@ pipeline {
                 }
             }
         }
+    }
     }
 
     post {
